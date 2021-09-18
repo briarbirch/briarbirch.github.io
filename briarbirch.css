@@ -12,8 +12,15 @@ body, p, section {
 
 body, input, button {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 16px;
+}
+
+@media(-webkit-min-device-pixel-ratio: 2) 
+and (max-device-width: 1024px) {
+  body, input, button {
+    font-weight: 300;
+  }
 }
 
 a {
@@ -57,7 +64,7 @@ html {
   width: 100%;
   height: 240px;
   top: 680px;
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.5), transparent);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 45%, transparent);
 }
 
 .content-paragraph {
@@ -67,6 +74,11 @@ html {
 
 .content-paragraph br {
   display: none;
+}
+
+#email-form input,
+#email-form button {
+  vertical-align: top;
 }
 
 #email-form input {
@@ -171,6 +183,14 @@ html {
   #footer br {
     display: none;
   }
+
+  @media(-webkit-min-device-pixel-ratio: 2)
+  and (max-device-width: 1024px)  {
+    body, input, button {
+      font-weight: 100;
+    }
+  }
+
 }
 
 @media(min-width: 1280px) {

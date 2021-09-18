@@ -6,6 +6,7 @@ document.addEventListener( "DOMContentLoaded", function( e ) {
       
   async function handleSubmit(event) {
     event.preventDefault();
+    if(event.target.querySelector("input").value.trim() == "") return;
     var status = document.getElementById("email-form-status");
     status.className = "";
     status.innerHTML = "";
@@ -17,11 +18,11 @@ document.addEventListener( "DOMContentLoaded", function( e ) {
           'Accept': 'application/json'
       }
     }).then(response => {
-      status.innerHTML = "Thanks for your submission!";
+      status.innerHTML = "Success! Thanks for your interest.";
       status.className = "success";
       form.reset()
     }).catch(error => {
-      status.innerHTML = "Oops! There was a problem submitting your form"
+      status.innerHTML = "Looks like something went wrong. Please try again."
       status.className = "failure";
     });
   }
